@@ -1,0 +1,14 @@
+﻿using library_v3.DTOs;
+using library_v3.Models;
+
+namespace library_v3.Providers
+{
+    public interface IBookProvider
+    {
+        Task<List<Book>> GetAllBooksAsync();
+        Task<Book?> GetBookByIdAsync(int id);
+        Task<Book?> CreateBookAsync(BookCreateDTO newBook);
+        Task<Book?> UpdateBookByIdAsync(int id, BookUpdateDTO updateBook);
+        Task<Book> DeleteBookAsync(int id);
+    }
+}

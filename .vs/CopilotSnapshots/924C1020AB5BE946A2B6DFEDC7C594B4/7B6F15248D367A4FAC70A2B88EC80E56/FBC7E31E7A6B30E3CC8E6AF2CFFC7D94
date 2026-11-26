@@ -1,0 +1,50 @@
+﻿using library_v3.Data;
+using library_v3.DTOs;
+using library_v3.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace library_v3.Providers
+{
+    public class BookProvider : IBookProvider
+    {
+        private readonly LibDBContext _db;
+
+        public BookProvider(LibDBContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<List<Book>> GetAllBooksAsync()
+        {
+            return await _db.Books.ToListAsync();
+        }
+
+        public async Task<Book?> GetBookByIdAsync(int id)
+        {
+            return await _db.Books.FirstOrDefaultAsync(b => b.Id == id);
+        }
+
+        public async Task<Book?> CreateBookAsync(BookCreateDTO newBook)
+        {
+            return await _db.Books.FirstOrDefaultAsync(b => b.Title == newBook.Title);
+        }
+
+        public async Task<Book?> UpdateBookByIdAsync(int id, BookUpdateDTO updateBook)
+        {
+            return await _db.Books.FirstOrDefaultAsync(b => b.Id == id);
+        }
+
+        public async Task<Book> DeleteBookAsync(int id)
+        {
+            var book = _db.Books.FirstOrDefaultAsync(b => b.Id == id);
+            if (book == null)
+                return null;
+
+            _db.Books.Remove(book);
+            await _db.SaveChangesAsync();
+
+            return book;
+        }
+
+    }
+}
