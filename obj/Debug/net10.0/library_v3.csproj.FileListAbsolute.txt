@@ -177,3 +177,4 @@ C:\Users\sadat\OneDrive\Desktop\c#\projects\library_v3\obj\Debug\net10.0\ref\lib
 C:\Users\sadat\OneDrive\Desktop\c#\projects\library_v3\bin\Debug\net10.0\MediatR.dll
 C:\Users\sadat\OneDrive\Desktop\c#\projects\library_v3\bin\Debug\net10.0\MediatR.Contracts.dll
 C:\Users\sadat\OneDrive\Desktop\c#\projects\library_v3\bin\Debug\net10.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\sadat\OneDrive\Desktop\c#\projects\library_v3\obj\Debug\net10.0\library_v3.sourcelink.json

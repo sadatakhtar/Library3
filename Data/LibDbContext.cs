@@ -46,6 +46,18 @@ namespace library_v3.Data
                         AuthorId = 3,
                     }
                 );
+            
+            modelBuilder
+                .Entity<User>()
+                .HasData(
+                    new User
+                    {
+                        Id = 1,
+                        Username = "admin",
+                        PasswordHash = "Password123"
+                  
+                    }
+                );
         }
     }
 }

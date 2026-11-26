@@ -34,13 +34,21 @@ namespace library_v3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
+                    b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PasswordHash = "Password123",
+                            Username = "admin"
+                        });
                 });
 
             modelBuilder.Entity("library_v3.Models.Author", b =>
